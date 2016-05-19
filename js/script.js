@@ -50,7 +50,20 @@ function addHoles() {
 function addPlayer() {
     var holesValue = document.getElementById('numHoles').value;
     $(scoreCard).append("<form class = 'jumbotron extraPlayer col-sm-12 col-md-12 col-lg-12 col-xs-12'></form>");
-    for (h = 1; h <= holesValue; h++) {
-        $(".extraPlayer").append("<input type='number' class = 'hole'> </input>");
+    var extraPlayer = ".extraPlayer";
+    $(extraPlayer).append("<div class='extraTray1'> </div>");
+    $(extraPlayer).append("<div class='extraTray2'> </div>");
+
+    if ( holesValue === "9") {
+        for (h = 1; h <= holesValue; h++) {
+            $(".extraTray1").append("<input type='number' class = 'hole'> </input>");
+        }
     }
+    else if ( holesValue === "18") {
+        for (h = 1; h <= holesValue/2; h++) {
+            $(".extraTray1").append("<input type='number' class = 'hole'> </input>");
+            $(".extraTray2").append("<input type='number' class = 'hole'> </input>");
+        }
+    }
+
 }
