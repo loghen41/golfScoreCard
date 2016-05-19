@@ -24,7 +24,7 @@ function addTrays() {
         var playerNum = "#player" + p;
         $(playerNum).empty();
         for (i = 1; i <= (holesValue/ 9); i++) {
-            $(playerNum).append("<div class='tray" + i + "'></div>");
+            $(playerNum).append("<div class='col-sm-5 col-md-5 col-lg-5 col-xs-5 tray" + i + "'></div>");
             addHoles()
         }
     }
@@ -37,12 +37,13 @@ function addHoles() {
     $(trayNum).empty();
     if ( holesValue === "9") {
         for (h = 1; h <= holesValue; h++) {
-            $(trayNum).append("<input type='number' class = 'hole'> </input>");
+            $(trayNum).append("<input type='number'  min = '1' placeholder='"+ h + "' class = 'hole'> </input>");
         }
+   // div to show total value     $(trayNum).append("<div class = 'hole'> </div>");
     }
     else if ( holesValue === "18") {
         for (h = 1; h <= holesValue/2; h++) {
-            $(trayNum).append("<input type='number' class = 'hole'> </input>");
+            $(trayNum).append("<input type='number' min = '1'  placeholder='"+ h + "' class = 'hole'> </input>");
         }
     }
 }
@@ -51,8 +52,8 @@ function addPlayer() {
     var holesValue = document.getElementById('numHoles').value;
     $(scoreCard).append("<form class = 'jumbotron extraPlayer col-sm-12 col-md-12 col-lg-12 col-xs-12'></form>");
     var extraPlayer = ".extraPlayer";
-    $(extraPlayer).append("<div class='extraTray1'> </div>");
-    $(extraPlayer).append("<div class='extraTray2'> </div>");
+    $(extraPlayer).append("<div class='col-sm-5 col-md-5 col-lg-5 col-xs-5 extraTray1'> </div>");
+    $(extraPlayer).append("<div class='col-sm-5 col-md-5 col-lg-5 col-xs-5 extraTray2'> </div>");
 
     if ( holesValue === "9") {
         for (h = 1; h <= holesValue; h++) {
@@ -61,8 +62,8 @@ function addPlayer() {
     }
     else if ( holesValue === "18") {
         for (h = 1; h <= holesValue/2; h++) {
-            $(".extraTray1").append("<input type='number' class = 'hole'> </input>");
-            $(".extraTray2").append("<input type='number' class = 'hole'> </input>");
+            $(".extraTray1").append("<input type='number' min = '1' class = 'hole'> </input>");
+            $(".extraTray2").append("<input type='number' min = '1' class = 'hole'> </input>");
         }
     }
 
