@@ -1,0 +1,15 @@
+.hole {
+    height: 40px;
+    width: 40px;
+    display: inline;
+}
+
+
+.jumbotron {
+    text-align: center;
+}
+
+#scoreCard {
+    background-color: #999;
+}
+
