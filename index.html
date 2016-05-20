@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Golf Score Card</title>
     <link href="css/stylesheet.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -21,8 +22,21 @@
 <body>
 <div id="selectionMenu"
      class="container jumbotron col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
-    <div class="row">
-        <h1>Golf Score Card</h1>
+    <div id = "teeTimer" class="container col-sm-offset-9 col-md-offset-9 col-lg-offset-9 col-xs-offset-9 col-sm-3 col-md-3 col-lg-3 col-xs-3" >
+    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+        <h4>Countdown to Tee-Time</h4>
+    </div>
+    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+        <input id="countdownSelect" type="number" min = "1" style="text-align: center;" placeholder="Minutes to Tee-Time?" class="col-sm-7 col-md-7 col-lg-7 col-xs-7">
+        <button onclick= "countdownTimer(); getTeeTime()"  class="col-sm-5 col-md-5 col-lg-5 col-xs-5">Start Timer</button>
+    </div>
+    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+        <p id="countdownDisplay" class="col-sm-12 col-md-12 col-lg-12 col-xs-12"></p>
+    </div>
+    </div>
+    <div class="row col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-offset-3 col-sm-6 col-md-6 col-lg-6 col-xs-6">
+        <h1 >Golf Score Card</h1>
+        <hr>
     </div>
     <div class="row">
         <div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-offset-2 col-sm-2 col-md-2 col-lg-2 col-xs-2">
@@ -35,7 +49,7 @@
             </select>
         </div>
         <div class="col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-2 col-md-2 col-lg-2 col-xs-2">
-            <label for="numPlayers"> Select your Number of Players</label>
+            <label for="numPlayers">Number of Players</label>
             <select oninput="addPlayers()" title="Number of Players" id="numPlayers">
                 <option value="...">...</option>
                 <option value="1">One</option>
@@ -46,7 +60,7 @@
             </select>
         </div>
         <div class="col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-2 col-md-2 col-lg-2 col-xs-2">
-            <label for="numHoles"> Select the Amount of Holes</label>
+            <label for="numHoles">Amount of Holes</label>
             <select oninput="addTrays()" title="Number of Holes" id="numHoles">
                 <option value="...">...</option>
                 <option value="9">Front Nine</option>

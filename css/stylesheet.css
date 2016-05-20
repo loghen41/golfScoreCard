@@ -1,6 +1,9 @@
+.finalScore {
+    border: solid #000000 2px;
+    background-color: #999;
+}
+
 .hole {
-    height: 40px;
-    width: 40px;
     display: inline;
     text-align: center;
 }
@@ -8,6 +11,30 @@
 
 .jumbotron {
     text-align: center;
+}
+
+#player1{
+    background-color: rgba(0, 123, 123, .4);
+}
+
+#player2{
+    background-color: rgba(123, 0, 123, .4);
+}
+
+#player3{
+    background-color: rgba(123, 123, 0, .4);
+}
+
+#player4{
+    background-color: rgba(0, 237, 237, .4);
+}
+
+#player5{
+    background-color: rgba(237, 0, 237, .4);
+}
+
+.extraPlayer{
+    background-color: rgba(237, 237, 0, .4);
 }
 
 #scoreCard {
