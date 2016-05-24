@@ -1,3 +1,7 @@
+* {
+    text-align: center;
+}
+
 .finalScore {
     border: solid #000000 2px;
     background-color: #999;
@@ -8,6 +12,21 @@
     text-align: center;
 }
 
+html {
+    background: url("http://travelservicescompany.com/wp-content/uploads/2015/10/golf-course.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.menu {
+    padding: 5px 5px 5px 5px;
+}
+.menuObject {
+    background-color: red;
+    height: 20px;
+    border: black 2px solid;
+}
 
 .jumbotron {
     text-align: center;
@@ -15,29 +34,51 @@
 
 #player1{
     background-color: rgba(0, 123, 123, .4);
+    margin: 5px 0 0 0;
+    padding: 5px 5px 5px 5px;
 }
 
 #player2{
     background-color: rgba(123, 0, 123, .4);
+    padding: 5px 5px 5px 5px;
 }
 
 #player3{
     background-color: rgba(123, 123, 0, .4);
+    padding: 5px 5px 5px 5px;
 }
 
 #player4{
     background-color: rgba(0, 237, 237, .4);
+    padding: 5px 5px 5px 5px;
 }
 
 #player5{
     background-color: rgba(237, 0, 237, .4);
+    padding: 5px 5px 5px 5px;
 }
 
 .extraPlayer{
     background-color: rgba(237, 237, 0, .4);
+    padding: 5px 5px 5px 5px;
 }
 
 #scoreCard {
     background-color: #999;
 }
+
+.score1 {
+    border: solid #000000 2px;
+    background-color: #999;
+}
+
+.score2 {
+    border: solid #000000 2px;
+    background-color: #999;
+}
+
+#title {
+    clear: both;
+}
+
 
