@@ -19,6 +19,8 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
+
+
 .menu {
     padding: 5px 5px 5px 5px;
 }
@@ -80,5 +82,7 @@ html {
 #title {
     clear: both;
 }
+
+
 
 

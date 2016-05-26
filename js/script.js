@@ -13,6 +13,8 @@ var courseValue = document.getElementById('courseSelect').value;
 var seconds = 1;
 var teetime;
 
+// variable for modal menu
+var modalMenu = "#modalMenu";
 
 //these variables connect to all of the forms
 
@@ -84,13 +86,16 @@ function addHoles() {
     $(trayNum).empty();
     if (holesValue === "9") {
         for (h = 1; h <= holesValue; h++) {
-            $(trayNum).append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h + "' class = 'hole col-sm-1 col-md-1 col-lg-1 col-xs-1'> </input>");
+            $(trayNum).append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + h + "'> </input>");
         }
-
     }
     else if (holesValue === "18") {
         for (h = 1; h <= holesValue / 2; h++) {
-            $(trayNum).append("<input  type='number' style='text-align: center;' min = '1'  placeholder='" + h + "' class = 'hole col-sm-1 col-md-1 col-lg-1 col-xs-1'> </input>");
+            if(trayNum === ".tray2") {
+                $(trayNum).append("<input  type='number' style='text-align: center;' min = '1'  placeholder='" + (h+9) + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + (h+9) + "' > </input>");
+            } else {
+                $(trayNum).append("<input  type='number' style='text-align: center;' min = '1'  placeholder='" + h + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + h + "' > </input>");
+            }
         }
         $(trayNum).append("<div class='col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-2 col-md-2 col-lg-2 col-xs-2 score" + i + "'>Score</div>");
     }
@@ -109,13 +114,13 @@ function addPlayer() {
     if (holesValue === "9") {
 
         for (h = 1; h <= holesValue; h++) {
-            $(".extraTray1").append("<input type='number' style='text-align: center;' min = '1' placeholder='" + h + "' class = 'hole'> </input>");
+            $(".extraTray1").append("<input type='number' style='text-align: center;' min = '1' placeholder='" + h + "' class = 'hole" + h + "'> </input>");
         }
     }
     else if (holesValue === "18") {
         for (h = 1; h <= holesValue / 2; h++) {
-            $(".extraTray1").append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h + "' class = 'hole'> </input>");
-            $(".extraTray2").append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h + "' class = 'hole'> </input>");
+            $(".extraTray1").append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h + "' class = 'hole" + h + "'> </input>");
+            $(".extraTray2").append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h*2 + "' class = 'hole" + h*2 + "'> </input>");
         }
     }
 
@@ -127,8 +132,9 @@ function addPlayer() {
 //this is completely unfinished
 
 function finalScores() {
-    for (var t in player1) {
-        var finalTotal1 = player1[t];
+    var holesValue = document.getElementById('numHoles').value;
+    for (a = 1; a <=holesValue; a++){
+
     }
 }
 
@@ -205,13 +211,21 @@ function addMenuHoles() {
     $(menuTrayNum).empty();
     if (holesValue === "9") {
         for (o = 1; o <= holesValue; o++) {
-            $(menuTrayNum).append("<div  class = 'menuObject col-sm-1 col-md-1 col-lg-1 col-xs-1'> </div>");
+            $(menuTrayNum).append("<div  class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id='menuObject" + o + "' style='text-align: center'>"+o+" </div>");
         }
 
     }
     else if (holesValue === "18") {
-        for (o = 1; o <= holesValue / 2; o++) {
-            $(menuTrayNum).append("<div class = 'menuObject col-sm-1 col-md-1 col-lg-1 col-xs-1'> </div>");
+        for (var o = 1; o <= holesValue / 2; o++) {
+            if (menuTrayNum === ".menuTray2") {
+                $(menuTrayNum).append("<div class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id= 'menuObject" + (o+9) + "' style='text-align: center'> "+(o+9)+" </div>");
+                $("body").append("<div id='holemodal" + o + "' class='modal fade' tabindex='-1' role='dialog'></div>");
+                $("").append("<div class='modal-dialog'></div>");
+                $("body").append("<div class='modal-content'></div>");
+            }
+            else {
+                $(menuTrayNum).append("<div class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id = 'menuObject" + o + "' style='text-align: center'> "+o+" </div>");
+            }
         }
     }
 }
@@ -221,9 +235,9 @@ function addHandicap () {
 }
 
 //weather API Call
-
+var xhttp;
 function getMyInfo(value) {
-    var xhttp = new XMLHttpRequest();
+    xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             var object = JSON.parse(xhttp.responseText);
@@ -232,9 +246,40 @@ function getMyInfo(value) {
             document.getElementById("weatherImage").src = "http://openweathermap.org/img/w/" + object.weather[0].icon + ".png";
 
         }
-    }
+    };
     xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?zip="+ value + ",us&appid=a4e12bc54b22227bd03bb03c867242d7", true);
     xhttp.send();
+}
+
+//golf score Call
+var golfInfo= {};
+var golfxhttp;
+function getGolfInfo(id) {
+    golfxhttp = new XMLHttpRequest();
+    golfxhttp.onreadystatechange = function() {
+        if (golfxhttp.readyState == 4 && golfxhttp.status == 200) {
+            golfInfo = JSON.parse(golfxhttp.responseText);
+            document.getElementById("menuObject1").innerHTML = golfInfo.course.name;
+        }
+    };
+//update the URL with the ID as I call it dynamically
+    golfxhttp.open("GET","https://golf-courses-api.herokuapp.com/courses/" + id,true);
+    golfxhttp.send();
+}
+
+
+//selection menu load 
+
+$(window).load(function() {
+    $(modalMenu).modal('show');
+});
+
+
+//Close Modal to start game
+
+function closeModal() {
+    $(modalMenu).modal('hide');
+    getGolfInfo(18300);
 }
 
 

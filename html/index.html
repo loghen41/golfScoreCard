@@ -20,6 +20,51 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="modalMenu" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="row">
+                    <label for="zip">Enter Your Zip Code</label>
+            </div>
+            <div class="row">
+            <input id="zip" type="number" min="0" minlength="5" style="text-align: center">
+                </div>
+            <div id = "courseSelect" class="row">
+                <p>Course Selection Menu</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-offset-2 col-sm-2 col-md-2 col-lg-2 col-xs-2">
+                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                        <label for="numPlayers">Number of Players</label>
+                    </div>
+                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                        <input oninput="addPlayers()" id="numPlayers" type="number" min="0" style="text-align: center">
+                    </div>
+                </div>
+                <div class="col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-xs-offset-4 col-sm-2 col-md-2 col-lg-2 col-xs-2">
+                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                        <label for="numHoles">Amount of Holes</label>
+                    </div>
+                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                        <select oninput="addPlayers()" title="Number of Holes" id="numHoles">
+                            <option value="...">...</option>
+                            <option value="9">Front Nine</option>
+                            <option value="9">Back Nine</option>
+                            <option value="18">Full Course</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button onclick="closeModal(); getMyInfo(document.getElementById('zip').value)">Start Game
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
 <div id="selectionMenu"
      class="container jumbotron col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
     <div id="topMenu">
@@ -47,47 +92,13 @@
     <div id="title" class="row  col-sm-12 col-md-12 col-lg-12 col-xs-12" style="text-align: center">
         <h1>Golf Score Card</h1>
     </div>
-    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
-        <div class="row col-sm-offset-5 col-md-offset-5 col-lg-offset-5 col-xs-offset-5 col-sm-2 col-md-2 col-lg-2 col-xs-2">
-            <label for="courseSelect">Enter Your Zip Code</label>
-        </div>
-        <div class="row col-sm-offset-5 col-md-offset-5 col-lg-offset-5 col-xs-offset-5 col-sm-2 col-md-2 col-lg-2 col-xs-2">
-            <input class="col-sm-12 col-md-12 col-lg-12 col-xs-12" id="courseSelect" type="number" min="0" minlength="5" style="text-align: center">
-        </div>
-        <div class="row col-sm-offset-5 col-md-offset-5 col-lg-offset-5 col-xs-offset-5 col-sm-2 col-md-2 col-lg-2 col-xs-2">
-            <button class="col-sm-12 col-md-12 col-lg-12 col-xs-12" onclick="getMyInfo(document.getElementById('courseSelect').value)">Submit Zip</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-offset-2 col-sm-2 col-md-2 col-lg-2 col-xs-2">
-            <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                <label for="numPlayers">Number of Players</label>
-            </div>
-            <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                <input oninput="addPlayers()" id="numPlayers" type="number" min="0" style="text-align: center">
-            </div>
-        </div>
-        <div class="col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-xs-offset-4 col-sm-2 col-md-2 col-lg-2 col-xs-2">
-            <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                <label for="numHoles">Amount of Holes</label>
-            </div>
-            <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                <select oninput="addPlayers()" title="Number of Holes" id="numHoles">
-                    <option value="...">...</option>
-                    <option value="9">Front Nine</option>
-                    <option value="9">Back Nine</option>
-                    <option value="18">Full Course</option>
-                </select>
-            </div>
-        </div>
-    </div>
 
 </div>
 <div id="scoreCard"
      class="jumbotron container col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10"></div>
-<div class="jumbotron  footer container col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
+<!-- <div class="jumbotron  footer container col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
     <button onclick="addPlayer()">Add Extra Player Mid Game</button>
-</div>
+</div> -->
 
 
 <script src="../js/script.js"></script>
