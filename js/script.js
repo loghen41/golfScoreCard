@@ -208,23 +208,30 @@ function addMenuTrays() {
 function addMenuHoles() {
     var holesValue = document.getElementById('numHoles').value;
     var menuTrayNum = ".menuTray" + k;
+
     $(menuTrayNum).empty();
     if (holesValue === "9") {
         for (o = 1; o <= holesValue; o++) {
-            $(menuTrayNum).append("<div  class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id='menuObject" + o + "' style='text-align: center'>"+o+" </div>");
+            $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + o + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id='menuObject" + o + "' style='text-align: center'>"+o+" </button>");
+            var holeModal = "holemodal" + o;
+            var modalDialog = "modal-dialog" + o;
+            var modalContent = "modal-content" + o;
+            $("body").prepend("<div id="+ holeModal + " class='modal fade' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div><div class = 'modal-body" + o + "'> <p>One Fine Body</p> </div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
         }
 
     }
     else if (holesValue === "18") {
         for (var o = 1; o <= holesValue / 2; o++) {
             if (menuTrayNum === ".menuTray2") {
-                $(menuTrayNum).append("<div class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id= 'menuObject" + (o+9) + "' style='text-align: center'> "+(o+9)+" </div>");
-                $("body").append("<div id='holemodal" + o + "' class='modal fade' tabindex='-1' role='dialog'></div>");
-                $("").append("<div class='modal-dialog'></div>");
-                $("body").append("<div class='modal-content'></div>");
+                $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + o + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id= 'menuObject" + (o+9) + "' style='text-align: center'> "+(o+9)+" </button>");
+                $("body").prepend("<div id="+ holeModal + " class='modal fade' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div><div class = 'modal-body" + o + "'> <p>One Fine Body</p> </div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
+
+
             }
             else {
-                $(menuTrayNum).append("<div class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id = 'menuObject" + o + "' style='text-align: center'> "+o+" </div>");
+                $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + o + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id = 'menuObject" + o + "' style='text-align: center'> "+o+" </button>");
+                $("body").prepend("<div id="+ holeModal + " class='modal fade' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div><div class = 'modal-body" + o + "'> <p>One Fine Body</p> </div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
+
             }
         }
     }
@@ -247,9 +254,26 @@ function getMyInfo(value) {
 
         }
     };
-    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?zip="+ value + ",us&appid=a4e12bc54b22227bd03bb03c867242d7", true);
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q="+ value + ",us&appid=a4e12bc54b22227bd03bb03c867242d7", true);
     xhttp.send();
 }
+
+//golf score city reference
+
+var golfCity = {};
+var cityxhttp;
+function getCityInfo(city) {
+    cityxhttp = new XMLHttpRequest();
+    cityxhttp.onreadystatechange = function () {
+        if (cityxhttp.readyState == 4 && cityxhttp.status == 200) {
+            golfCity = JSON.parse(cityxhttp.responseText);
+            document.getElementById("testDiv").innerHTML = golfCity.course.name;
+        }
+    };
+    cityxhttp.open("POST", "https://golf-courses-api.herokuapp.com/courses/search_by_location?city=" + city, true);
+    cityxhttp.send();
+}
+
 
 //golf score Call
 var golfInfo= {};
@@ -259,7 +283,7 @@ function getGolfInfo(id) {
     golfxhttp.onreadystatechange = function() {
         if (golfxhttp.readyState == 4 && golfxhttp.status == 200) {
             golfInfo = JSON.parse(golfxhttp.responseText);
-            document.getElementById("menuObject1").innerHTML = golfInfo.course.name;
+            document.getElementById("testDiv").innerHTML = golfInfo.course.name;
         }
     };
 //update the URL with the ID as I call it dynamically
@@ -281,6 +305,21 @@ function closeModal() {
     $(modalMenu).modal('hide');
     getGolfInfo(18300);
 }
+
+/*
+function createModal() {
+    var holeModal = "#holemodal" + o;
+    var modalDialog = "#modal-dialog" + o;
+    var modalContent = "#modal-content" + o;
+    $("body").append("<div id="+ holeModal + "class='modal fade' tabindex='-1' role='dialog'></div>");
+    $(holeModal).append("<div id =" + modalDialog + " class='modal-dialog'></div>");
+    $(modalDialog).append("<div id = " + modalContent + "class='modal-content'></div>");
+    $(modalContent).append("<div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div>");
+    $(modalContent).append("<div class = 'modal-body" + o + "'> <p>One Fine Body</p> </div>");
+    $(modalContent).append("<div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div>");
+
+}
+*/
 
 
 //https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation use this for building geolocation
