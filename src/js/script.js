@@ -16,6 +16,9 @@ var teetime;
 // variable for modal menu
 var modalMenu = "#modalMenu";
 
+// map variable for google maps
+var map;
+
 //these variables connect to all of the forms
 
 
@@ -224,12 +227,18 @@ function addMenuHoles() {
         for (var o = 1; o <= holesValue / 2; o++) {
             if (menuTrayNum === ".menuTray2") {
                 $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + o + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id= 'menuObject" + (o+9) + "' style='text-align: center'> "+(o+9)+" </button>");
+                var holeModal = "holemodal" + o;
+                var modalDialog = "modal-dialog" + o;
+                var modalContent = "modal-content" + o;
                 $("body").prepend("<div id="+ holeModal + " class='modal fade' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div><div class = 'modal-body" + o + "'> <p>One Fine Body</p> </div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
 
 
             }
             else {
                 $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + o + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id = 'menuObject" + o + "' style='text-align: center'> "+o+" </button>");
+                var holeModal = "holemodal" + o;
+                var modalDialog = "modal-dialog" + o;
+                var modalContent = "modal-content" + o;
                 $("body").prepend("<div id="+ holeModal + " class='modal fade' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div><div class = 'modal-body" + o + "'> <p>One Fine Body</p> </div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
 
             }
@@ -258,8 +267,8 @@ function getMyInfo(value) {
     xhttp.send();
 }
 
-//golf score city reference
-
+//golf score city reference  (Blake's Code)
+/*
 var golfCity = {};
 var cityxhttp;
 function getCityInfo(city) {
@@ -276,6 +285,8 @@ function getCityInfo(city) {
 
 
 //golf score Call
+
+
 var golfInfo= {};
 var golfxhttp;
 function getGolfInfo(id) {
@@ -291,6 +302,53 @@ function getGolfInfo(id) {
     golfxhttp.send();
 }
 
+*/
+
+//specific golf score call
+
+var golfInfo= {};
+var golfxhttp;
+function getGolfInfo(id) {
+    golfxhttp = new XMLHttpRequest();
+    golfxhttp.onreadystatechange = function() {
+        if (golfxhttp.readyState == 4 && golfxhttp.status == 200) {
+            golfInfo = JSON.parse(golfxhttp.responseText);
+
+           // document.getElementById("holemodal1").innerHTML = golfInfo.course.name;
+        }
+    };
+//update the URL with the ID as I call it dynamically
+    golfxhttp.open("GET","https://golf-courses-api.herokuapp.com/courses/18300" ,true);
+    golfxhttp.send();
+}
+
+
+
+//Google Map API
+
+
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('testDiv'), {
+        zoom: 17,
+        center: {lat: 40.4295033232823, lng: -111.903993917466},
+        mapTypeId: google.maps.MapTypeId.SATELLITE
+    });
+
+
+    var teeOff = '../images/tee-off.png';
+    var teeOffMarker = new google.maps.Marker({
+        position: {lat: 40.4287968880878, lng: -111.907022595406},
+        map: map,
+        icon: teeOff
+    });
+
+    var flag = '../images/flag.png';
+    var flagMarker = new google.maps.Marker({
+        position: {lat: 40.4289071414682, lng: -111.903374791145},
+        map: map,
+        icon: flag
+    });
+}
 
 //selection menu load 
 

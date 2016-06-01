@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.doubleSpaced {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .finalScore {
     border: solid #000000 2px;
     background-color: #999;
@@ -13,13 +18,32 @@
 }
 
 html {
-    background: url("http://travelservicescompany.com/wp-content/uploads/2015/10/golf-course.jpg") no-repeat center center;
+    background: url("../images/newmarioGolfwithTrentandJonny.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
+#holemodal1 {
+    height: 600px;
+    width: 600px;
+}
+
+#testDiv {
+    height: 600px;
+    width: 600px;
+}
+.jumbotron {
+    text-align: center;
+}
+#modalMenu {
+    background: url("../images/newmarioGolfwithTrentandJonny.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 .menu {
     padding: 5px 5px 5px 5px;
@@ -30,9 +54,7 @@ html {
     border: black 2px solid;
 }
 
-.jumbotron {
-    text-align: center;
-}
+
 
 #player1{
     background-color: rgba(0, 123, 123, .4);
@@ -77,6 +99,11 @@ html {
 .score2 {
     border: solid #000000 2px;
     background-color: #999;
+}
+
+.spaced {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #title {
