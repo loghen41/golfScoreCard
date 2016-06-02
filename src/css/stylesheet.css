@@ -25,15 +25,7 @@ html {
     background-size: cover;
 }
 
-#holemodal1 {
-    height: 600px;
-    width: 600px;
-}
 
-#testDiv {
-    height: 600px;
-    width: 600px;
-}
 .jumbotron {
     text-align: center;
 }
@@ -43,6 +35,13 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.menuModal {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    margin: auto;
 }
 
 .menu {
