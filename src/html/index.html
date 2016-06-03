@@ -19,7 +19,7 @@
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
             crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="addMenu()">
 
 <div id="modalMenu" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
      aria-labelledby="myLargeModalLabel">
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="row doubleSpaced">
-                <button onclick="closeModal(); getGolfInfo(); getMyInfo(document.getElementById('zip').value);">Start Game
+                <button onclick="closeModal(); getMyInfo(document.getElementById('zip').value);">Start Game
                 </button>
             </div>
 
@@ -94,14 +94,13 @@
         </div>
     </div>
     <div id="title" class="row  col-sm-12 col-md-12 col-lg-12 col-xs-12" style="text-align: center">
-        <h1> Mario Golf Score Card</h1>
     </div>
 
 </div>
 <div id="scoreCard"
      class="jumbotron container col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
-    <div id="testDiv"></div>
 </div>
+<div id="testDiv"></div>
 <div id="modalArea"></div>
 <!-- <div class="jumbotron  footer container col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
     <button onclick="addPlayer()">Add Extra Player Mid Game</button>
@@ -109,6 +108,6 @@
 
 
 <script src="../js/script.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgQQvEJGa9JyA1zBLDEPglKWsvhZRw-e4&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlwNMAKaa_QltdV7oHvfzo9oWWdnF9Ckk&callback=initMap" async defer></script>
 </body>
 </html>

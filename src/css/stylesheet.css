@@ -37,11 +37,10 @@ html {
     background-size: cover;
 }
 
-.menuModal {
-    height: 600px;
-    width: 600px;
-    position: absolute;
-    margin: auto;
+
+.map {
+    height: 450px;
+
 }
 
 .menu {
