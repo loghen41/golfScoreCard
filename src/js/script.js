@@ -6,9 +6,6 @@
 //variable to access Score Card Div throughout javascript
 var scoreCard = document.getElementById('scoreCard');
 
-//value set up for building in functionality for different courses
-var courseValue = document.getElementById('courseSelect').value;
-
 //variables set up for timer function
 var seconds = 1;
 var teetime;
@@ -16,8 +13,6 @@ var teetime;
 // variable for modal menu
 var modalMenu = "#modalMenu";
 
-// map variable for google maps
-var map;
 
 //this function adds the different players to the Score Card Div
 function addPlayers() {
@@ -43,9 +38,11 @@ function addTrays() {
 
         if (holesValue === "9") {
             $(playerNum).append("<input class='col-sm-1 col-md-1 col-lg-1 col-xs-1 name" + p + "' type='text' placeholder='name' </input>");
-            addHandicap();
+            addSkill();
+            selectPlayer();
+
             for (i = 1; i <= (holesValue / 9); i++) {
-                $(playerNum).append("<div id= 'tray" + i +"' class='col-sm-9 col-md-9 col-lg-9 col-xs-9 tray" + i + "'></div>");
+                $(playerNum).append("<div id= 'tray" + i + "' class='col-sm-8 col-md-8 col-lg-8 col-xs-8 tray" + i + "'></div>");
                 addHoles()
             }
             $(playerNum).append("<div class='col-sm-1 col-md-1 col-lg-1 col-xs-1 finalScore' id= 'finalScore" + p + "'>Score</div>");
@@ -53,9 +50,10 @@ function addTrays() {
         }
         else if (holesValue === "18") {
             $(playerNum).append("<input class='col-sm-1 col-md-1 col-lg-1 col-xs-1 name" + p + "' type='text' placeholder='name' </input>");
-            addHandicap();
+            addSkill();
+            selectPlayer();
             for (i = 1; i <= (holesValue / 9); i++) {
-                $(playerNum).append("<div id= 'tray" + i +"' class='col-sm-4 col-md-4 col-lg-4 col-xs-4 tray" + i + "'></div>");
+                $(playerNum).append("<div id= 'tray" + i + "' class='col-sm-4 col-md-4 col-lg-4 col-xs-4 tray" + i + "'></div>");
                 addHoles()
             }
             $(playerNum).append("<div class='col-sm-1 col-md-1 col-lg-1 col-xs-1 finalScore' id= 'finalScore" + p + "'>Score</div>");
@@ -80,8 +78,8 @@ function addHoles() {
     }
     else if (holesValue === "18") {
         for (h = 1; h <= holesValue / 2; h++) {
-            if(trayNum === ".tray2") {
-                $(trayNum).append("<input  type='number' oninput='finalScores()' style='text-align: center;' min = '1'  placeholder='" + (h+9) + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + (h+9) + "' > </input>");
+            if (trayNum === ".tray2") {
+                $(trayNum).append("<input  type='number' oninput='finalScores()' style='text-align: center;' min = '1'  placeholder='" + (h + 9) + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + (h + 9) + "' > </input>");
             } else {
                 $(trayNum).append("<input  type='number' oninput='finalScores()' text-align: center;' min = '1'  placeholder='" + h + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + h + "' > </input>");
             }
@@ -93,30 +91,30 @@ function addHoles() {
 //this function adds an extra player mid game if needed
 // This function was becoming rather difficult to support, and may be eventually removed.
 /*
-function addPlayer() {
-    var holesValue = document.getElementById('numHoles').value;
-    $(scoreCard).append("<form  id='extraPlayer' class = 'jumbotron extraPlayer col-sm-12 col-md-12 col-lg-12 col-xs-12'></form>");
-    var extraPlayer = ".extraPlayer";
-    $(extraPlayer).append("<input class='col-sm-1 col-md-1 col-lg-1 col-xs-1 extraName' type='text' placeholder='name' </input>");
-    $(extraPlayer).append("<div class='col-sm-5 col-md-5 col-lg-5 col-xs-5 extraTray1'> </div>");
-    $(extraPlayer).append("<div class='col-sm-5 col-md-5 col-lg-5 col-xs-5 extraTray2'> </div>");
+ function addPlayer() {
+ var holesValue = document.getElementById('numHoles').value;
+ $(scoreCard).append("<form  id='extraPlayer' class = 'jumbotron extraPlayer col-sm-12 col-md-12 col-lg-12 col-xs-12'></form>");
+ var extraPlayer = ".extraPlayer";
+ $(extraPlayer).append("<input class='col-sm-1 col-md-1 col-lg-1 col-xs-1 extraName' type='text' placeholder='name' </input>");
+ $(extraPlayer).append("<div class='col-sm-5 col-md-5 col-lg-5 col-xs-5 extraTray1'> </div>");
+ $(extraPlayer).append("<div class='col-sm-5 col-md-5 col-lg-5 col-xs-5 extraTray2'> </div>");
 
-    if (holesValue === "9") {
+ if (holesValue === "9") {
 
-        for (h = 1; h <= holesValue; h++) {
-            $(".extraTray1").append("<input type='number' style='text-align: center;' min = '1' placeholder='" + h + "' class = 'hole" + h + "'> </input>");
-        }
-    }
-    else if (holesValue === "18") {
-        for (h = 1; h <= holesValue / 2; h++) {
-            $(".extraTray1").append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h + "' class = 'hole" + h + "'> </input>");
-            $(".extraTray2").append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h*2 + "' class = 'hole" + h*2 + "'> </input>");
-        }
-    }
+ for (h = 1; h <= holesValue; h++) {
+ $(".extraTray1").append("<input type='number' style='text-align: center;' min = '1' placeholder='" + h + "' class = 'hole" + h + "'> </input>");
+ }
+ }
+ else if (holesValue === "18") {
+ for (h = 1; h <= holesValue / 2; h++) {
+ $(".extraTray1").append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h + "' class = 'hole" + h + "'> </input>");
+ $(".extraTray2").append("<input type='number' style='text-align: center;'  min = '1' placeholder='" + h*2 + "' class = 'hole" + h*2 + "'> </input>");
+ }
+ }
 
-}
+ }
 
-*/
+ */
 //this totals up the final scores for the individual players
 
 //this is completely unfinished
@@ -124,21 +122,21 @@ function addPlayer() {
 function finalScores() {
     var playersValue = document.getElementById('numPlayers').value;
     var holesValue = document.getElementById('numHoles').value;
-    for(thePlayer = 1; thePlayer <= playersValue; thePlayer++) {
-            for (theTray = 1; theTray <=holesValue/9; theTray++){
-                if(holesValue === '9') {
-                        document.getElementById('finalScore' + thePlayer).innerHTML = (+document.getElementsByClassName('hole1')[(thePlayer-1)].value + +document.getElementsByClassName('hole2')[(thePlayer-1)].value + +document.getElementsByClassName('hole3')[(thePlayer-1)].value + +document.getElementsByClassName('hole4')[(thePlayer-1)].value + +document.getElementsByClassName('hole5')[(thePlayer-1)].value + +document.getElementsByClassName('hole6')[(thePlayer-1)].value + +document.getElementsByClassName('hole7')[(thePlayer-1)].value + +document.getElementsByClassName('hole8')[(thePlayer-1)].value + +document.getElementsByClassName('hole9')[(thePlayer-1)].value) ;
+    for (thePlayer = 1; thePlayer <= playersValue; thePlayer++) {
+        for (theTray = 1; theTray <= holesValue / 9; theTray++) {
+            if (holesValue === '9') {
+                document.getElementById('finalScore' + thePlayer).innerHTML = (+document.getElementsByClassName('hole1')[(thePlayer - 1)].value + +document.getElementsByClassName('hole2')[(thePlayer - 1)].value + +document.getElementsByClassName('hole3')[(thePlayer - 1)].value + +document.getElementsByClassName('hole4')[(thePlayer - 1)].value + +document.getElementsByClassName('hole5')[(thePlayer - 1)].value + +document.getElementsByClassName('hole6')[(thePlayer - 1)].value + +document.getElementsByClassName('hole7')[(thePlayer - 1)].value + +document.getElementsByClassName('hole8')[(thePlayer - 1)].value + +document.getElementsByClassName('hole9')[(thePlayer - 1)].value);
 
-                }
-                if(holesValue === '18') {
-                    var firstNine = (+document.getElementsByClassName('hole1')[(thePlayer-1)].value + +document.getElementsByClassName('hole2')[(thePlayer-1)].value + +document.getElementsByClassName('hole3')[(thePlayer-1)].value + +document.getElementsByClassName('hole4')[(thePlayer-1)].value + +document.getElementsByClassName('hole5')[(thePlayer-1)].value + +document.getElementsByClassName('hole6')[(thePlayer-1)].value + +document.getElementsByClassName('hole7')[(thePlayer-1)].value + +document.getElementsByClassName('hole8')[(thePlayer-1)].value + +document.getElementsByClassName('hole9')[(thePlayer-1)].value);
-                    var secondNine = (+document.getElementsByClassName('hole10')[(thePlayer-1)].value + +document.getElementsByClassName('hole11')[(thePlayer-1)].value + +document.getElementsByClassName('hole12')[(thePlayer-1)].value + +document.getElementsByClassName('hole13')[(thePlayer-1)].value + +document.getElementsByClassName('hole14')[(thePlayer-1)].value + +document.getElementsByClassName('hole15')[(thePlayer-1)].value + +document.getElementsByClassName('hole16')[(thePlayer-1)].value + +document.getElementsByClassName('hole17')[(thePlayer-1)].value + +document.getElementsByClassName('hole18')[(thePlayer-1)].value);
-
-                    document.getElementsByClassName('score1')[thePlayer-1].innerHTML = firstNine;
-                    document.getElementsByClassName('score2')[thePlayer-1].innerHTML = secondNine;
-                    document.getElementById('finalScore' + thePlayer).innerHTML = (+firstNine + + secondNine);
-                }
             }
+            if (holesValue === '18') {
+                var firstNine = (+document.getElementsByClassName('hole1')[(thePlayer - 1)].value + +document.getElementsByClassName('hole2')[(thePlayer - 1)].value + +document.getElementsByClassName('hole3')[(thePlayer - 1)].value + +document.getElementsByClassName('hole4')[(thePlayer - 1)].value + +document.getElementsByClassName('hole5')[(thePlayer - 1)].value + +document.getElementsByClassName('hole6')[(thePlayer - 1)].value + +document.getElementsByClassName('hole7')[(thePlayer - 1)].value + +document.getElementsByClassName('hole8')[(thePlayer - 1)].value + +document.getElementsByClassName('hole9')[(thePlayer - 1)].value);
+                var secondNine = (+document.getElementsByClassName('hole10')[(thePlayer - 1)].value + +document.getElementsByClassName('hole11')[(thePlayer - 1)].value + +document.getElementsByClassName('hole12')[(thePlayer - 1)].value + +document.getElementsByClassName('hole13')[(thePlayer - 1)].value + +document.getElementsByClassName('hole14')[(thePlayer - 1)].value + +document.getElementsByClassName('hole15')[(thePlayer - 1)].value + +document.getElementsByClassName('hole16')[(thePlayer - 1)].value + +document.getElementsByClassName('hole17')[(thePlayer - 1)].value + +document.getElementsByClassName('hole18')[(thePlayer - 1)].value);
+
+                document.getElementsByClassName('score1')[thePlayer - 1].innerHTML = firstNine;
+                document.getElementsByClassName('score2')[thePlayer - 1].innerHTML = secondNine;
+                document.getElementById('finalScore' + thePlayer).innerHTML = (+firstNine + +secondNine);
+            }
+        }
 
     }
 }
@@ -194,11 +192,12 @@ function addMenuTrays() {
     $(menu).empty();
     $(menu).append("<div class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1'></div>");
     $(menu).append("<div class='col-sm-1 col-md-1 col-lg-1 col-xs-1'> </div>");
+    $(menu).append("<div class='col-sm-1 col-md-1 col-lg-1 col-xs-1'> </div>");
 
     if (holesValue === "9") {
 
         for (k = 1; k <= (holesValue / 9); k++) {
-            $(menu).append("<div class='col-sm-9 col-md-9 col-lg-9 col-xs-9 menuTray" + k + "'></div>");
+            $(menu).append("<div class='col-sm-8 col-md-8 col-lg-8 col-xs-8 menuTray" + k + "'></div>");
             addMenuHoles()
         }
 
@@ -222,52 +221,49 @@ function addMenuHoles() {
     if (holesValue === "9") {
         $(modalArea).empty();
         for (o = 1; o <= holesValue; o++) {
-            $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + o + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id='menuObject" + o + "' style='text-align: center'>"+o+" </button>");
+            $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + o + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id='menuObject" + o + "' style='text-align: center'>" + o + " </button>");
             var holeModal = "holemodal" + o;
             var modalDialog = "modal-dialog" + o;
             var modalContent = "modal-content" + o;
-            $(modalArea).append("<div id="+ holeModal + " class='modal fade menuModal' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div><div class = 'modal-body" + o + "'><div id='map" + o  + "' class='map col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-10 col-sm-10 col-md-10 col-lg-10'></div> <div class = 'modal" + o  + " col-xs-12 col-sm-12 col-md-12 col-lg-12'></div></div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
+            $(modalArea).append("<div id=" + holeModal + " class='modal fade menuModal' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div><div class = 'modal-body" + o + "'><div id='map" + o + "' class='map col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-10 col-sm-10 col-md-10 col-lg-10'></div> <div class = 'modal" + o + " col-xs-12 col-sm-12 col-md-12 col-lg-12'></div></div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
         }
 
     }
     else if (holesValue === "18") {
         for (var o = 1; o <= holesValue / 2; o++) {
             if (menuTrayNum === ".menuTray2") {
-                $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + (o+9) + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id= 'menuObject" + (o+9) + "' style='text-align: center'> "+(o+9)+" </button>");
-                var holeModal = "holemodal" + (o+9);
+                $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + (o + 9) + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id= 'menuObject" + (o + 9) + "' style='text-align: center'> " + (o + 9) + " </button>");
+                var holeModal = "holemodal" + (o + 9);
                 var modalDialog = "modal-dialog" + o;
                 var modalContent = "modal-content" + o;
-                $(modalArea).append("<div id="+ holeModal + " class='modal fade menuModal' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + (o+9) + "</h4></div><div class = 'modal-body" + (o+9) + "'><div id='map" + (o+9) + "' class='map col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-10 col-sm-10 col-md-10 col-lg-10'></div> <div class = 'modal" + (o+9) + " col-xs-12 col-sm-12 col-md-12 col-lg-12'></div></div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
+                $(modalArea).append("<div id=" + holeModal + " class='modal fade menuModal' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + (o + 9) + "</h4></div><div class = 'modal-body" + (o + 9) + "'><div id='map" + (o + 9) + "' class='map col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-10 col-sm-10 col-md-10 col-lg-10'></div> <div class = 'modal" + (o + 9) + " col-xs-12 col-sm-12 col-md-12 col-lg-12'></div></div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
 
 
             }
             else {
-                $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + o + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id = 'menuObject" + o + "' style='text-align: center'> "+o+" </button>");
+                $(menuTrayNum).append("<button type='button' data-toggle='modal' data-target='#holemodal" + o + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 menuObject' id = 'menuObject" + o + "' style='text-align: center'> " + o + " </button>");
                 var holeModal = "holemodal" + o;
                 var modalDialog = "modal-dialog" + o;
                 var modalContent = "modal-content" + o;
-                $(modalArea).append("<div id="+ holeModal + " class='modal fade menuModal' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div><div class = 'modal-body" + o + "'> <div id='map" + o  + "' class='map col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-10 col-sm-10 col-md-10 col-lg-10'></div><div class = 'modal" + o + " col-xs-12 col-sm-12 col-md-12 col-lg-12'></div></div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
+                $(modalArea).append("<div id=" + holeModal + " class='modal fade menuModal' tabindex='-1' role='dialog'><div id =" + modalDialog + " class='modal-dialog'><div id = " + modalContent + " class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Hole " + o + "</h4></div><div class = 'modal-body" + o + "'> <div id='map" + o + "' class='map col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-10 col-sm-10 col-md-10 col-lg-10'></div><div class = 'modal" + o + " col-xs-12 col-sm-12 col-md-12 col-lg-12'></div></div><div class = 'modal-footer" + o + "'> <button  type = 'button' class = 'btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>");
 
             }
         }
     }
-    getGolfInfo();
-    setTimeout(function() {
-        initMap();
-    },500
-    );
+
 }
 
 // add the handicap area
-function addHandicap () {
-    $("#player" + p).append("<select class='col-sm-1 col-md-1 col-lg-1 col-xs-1 handicap" + p + "'><option value=''> Select Your Player </option> <option value='Mario'> Mario </option> <option value='Luigi'> Luigi </option><option value='Toad'> Toad </option><option value='Peach'> Peach</option></select>");
+function selectPlayer() {
+    $("#player" + p).append("<select  class='col-sm-1 col-md-1 col-lg-1 col-xs-1' id= 'selectPlayer" + p + "' oninput='playerSelect(this.value)'><option value='...'> Select Your Player </option> <option value='Mario'> Mario </option> <option value='Luigi'> Luigi </option><option value='Toad'> Toad </option><option value='Peach'> Peach</option></select>");
 }
+
 
 //weather API Call
 var xhttp;
 function getMyInfo(value) {
     xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             var object = JSON.parse(xhttp.responseText);
             document.getElementById("cityName").innerHTML = object.name;
@@ -276,107 +272,128 @@ function getMyInfo(value) {
 
         }
     };
-    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q="+ value + ",us&appid=a4e12bc54b22227bd03bb03c867242d7", true);
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",us&appid=a4e12bc54b22227bd03bb03c867242d7", true);
     xhttp.send();
 }
 
-//golf score city reference  (Blake's Code)
-/*
 var golfCity = {};
-var cityxhttp;
-function getCityInfo(city) {
-    cityxhttp = new XMLHttpRequest();
-    cityxhttp.onreadystatechange = function () {
-        if (cityxhttp.readyState == 4 && cityxhttp.status == 200) {
-            golfCity = JSON.parse(cityxhttp.responseText);
-            document.getElementById("testDiv").innerHTML = golfCity.course.name;
+var golfCityXhttp;
+
+function getGolfCity(city) {
+    var body = {
+        name: " ",
+        state: " ",
+        address: " ",
+        country: " ",
+        city: city,
+        radius: "20"
+    };
+    golfCityXhttp = new XMLHttpRequest();
+    golfCityXhttp.onreadystatechange = function () {
+        if (golfCityXhttp.readyState == 4 && golfCityXhttp.status == 200) {
+            golfCity = JSON.parse(golfCityXhttp.responseText);
+            for (list = 0; list < golfCity.courses.length; list++) {
+                $("#courseSelectionMenu").append("<option value = '" + golfCity.courses[list].id + "'>" + golfCity.courses[list].name + "</option> ");
+
+            }
         }
     };
-    cityxhttp.open("POST", "https://golf-courses-api.herokuapp.com/courses/search_by_location?city=" + city, true);
-    cityxhttp.send();
+    golfCityXhttp.open("POST", "http://golf-courses-api.herokuapp.com/courses/search", true);
+    golfCityXhttp.setRequestHeader("Content-Type", "application/json");
+    golfCityXhttp.send(JSON.stringify(body));
 }
 
+var courseInfo = {};
+var courseInfoXhttp;
+function getCourseInfo(theId) {
+    courseInfoXhttp = new XMLHttpRequest();
+    courseInfoXhttp.onreadystatechange = function () {
+        if (courseInfoXhttp.readyState == 4 && courseInfoXhttp.status == 200) {
+            courseInfo = JSON.parse(courseInfoXhttp.responseText);
+            $('#courseName').append("<p>" + courseInfo.course.name +"</p>")
+            if (courseInfo.course.hole_count === 18) {
+                $("#numHoles").append("  <option value='...'>...</option>" + "<option value='9'>Front Nine</option>" + "<option value='9'>Back Nine</option>" + "<option value='18'>Full Course</option>")
+            }
 
-//golf score Call
-
-
-var golfInfo= {};
-var golfxhttp;
-function getGolfInfo(id) {
-    golfxhttp = new XMLHttpRequest();
-    golfxhttp.onreadystatechange = function() {
-        if (golfxhttp.readyState == 4 && golfxhttp.status == 200) {
-            golfInfo = JSON.parse(golfxhttp.responseText);
-            document.getElementById("testDiv").innerHTML = golfInfo.course.name;
+            else if (courseInfo.course.hole_count === 9) {
+                $("#numHoles").append("  <option value='...'>...</option>" + "<option value='9'>Front Nine</option>" )
+            }
         }
     };
-//update the URL with the ID as I call it dynamically
-    golfxhttp.open("GET","https://golf-courses-api.herokuapp.com/courses/" + id,true);
-    golfxhttp.send();
+    courseInfoXhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + theId, true);
+    courseInfoXhttp.send();
 }
-
-*/
 
 //specific golf score call
 
-var golfInfo= {};
+var golfInfo = {};
 var golfxhttp;
 function getGolfInfo(id) {
     var holesValue = document.getElementById('numHoles').value;
+    var playersValue = document.getElementById('numPlayers').value;
     golfxhttp = new XMLHttpRequest();
-    golfxhttp.onreadystatechange = function() {
+    golfxhttp.onreadystatechange = function () {
         if (golfxhttp.readyState == 4 && golfxhttp.status == 200) {
             golfInfo = JSON.parse(golfxhttp.responseText);
-            for(holeNum = 1; holeNum <= holesValue; holeNum++)
-            document.getElementsByClassName("modal" + holeNum)[0].innerHTML = "<p>Yards: " + golfInfo.course.holes[holeNum-1].tee_boxes[0].yards + "</p> <p>Par: " + golfInfo.course.holes[holeNum-1].tee_boxes[0].par + "</p>"
-            document.getElementById('title').innerHTML = "<h1>Welcome to Mario Golf</h1><h2>" + golfInfo.course.name + "</h2>"
+            document.getElementById('title').innerHTML = "<h1>Welcome to Mario Golf</h1><h2>" + golfInfo.course.name + "</h2>";
+            for (holeNum = 1; holeNum <= holesValue; holeNum++) {
+                document.getElementsByClassName("modal" + holeNum)[0].innerHTML = "<p>Yards: " + golfInfo.course.holes[holeNum - 1].tee_boxes[0].yards + "</p> <p>Par: " + golfInfo.course.holes[holeNum - 1].tee_boxes[0].par + "</p>" + "<p>Handicap: " + golfInfo.course.holes[holeNum - 1].tee_boxes[0].hcp + "</p>"
+            }
+            for (playerNumber = 1; playerNumber <= playersValue; playerNumber++) {
+                for(skill = 0; skill < golfInfo.course.holes[0].tee_boxes.length; skill++ ) {
+                    $(".selectSkill" + playerNumber).append("<option value=' " + golfInfo.course.holes[0].tee_boxes[skill].tee_type + "'> " + golfInfo.course.holes[0].tee_boxes[skill].tee_type + "</option>");
+                }
+
+            }
         }
     };
 //update the URL with the ID as I call it dynamically
-    golfxhttp.open("GET","https://golf-courses-api.herokuapp.com/courses/18300" ,true);
+    golfxhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + id, true);
     golfxhttp.send();
 }
-
 
 
 //Google Map API
 
 
 function initMap() {
+    // map variable for google maps
     var holesValue = document.getElementById('numHoles').value;
-    for (mapHole = 1; mapHole <=holesValue; mapHole ++) {
+    for (mapHole = 1; mapHole <= holesValue; mapHole++) {
         var map = new google.maps.Map(document.getElementById('map' + mapHole), {
+            center: {lat: -34.397, lng: 150.644},
             zoom: 17,
-            center: {lat: 40.429, lng: -111.903},
             mapTypeId: google.maps.MapTypeId.SATELLITE
         });
-
-        var teeOff = '../images/tee-off.png';
-        var teeOffMarker = new google.maps.Marker({
-            position: {lat: 40.428, lng: -111.907},
-            map: map,
-            icon: teeOff
-        });
-
-        var flag = '../images/flag.png';
-        var flagMarker = new google.maps.Marker({
-            position: {lat: 40.428, lng: -111.903},
-            map: map,
-            icon: flag
-        });
-
-        google.maps.event.trigger(map, 'resize');
-
-        var reCenter = new google.maps.LatLng(40.429, -111.903);
-        map.setCenter(reCenter);
     }
+
+    var teeOff = '../images/tee-off.png';
+    var teeOffMarker = new google.maps.Marker({
+        position: {lat: 40.428, lng: -111.907},
+        map: map,
+        icon: teeOff
+    });
+
+    var flag = '../images/flag.png';
+    var flagMarker = new google.maps.Marker({
+        position: {lat: 40.428, lng: -111.903},
+        map: map,
+        icon: flag
+    });
 }
 
+
+/*
+ var reCenter = new google.maps.LatLng(40.429, -111.903);
+ map.setCenter(reCenter);
+ google.maps.event.trigger(map, 'resize');
+
+ */
 
 
 //selection menu load at browser open
 
-$(window).load(function() {
+$(window).load(function () {
     $(modalMenu).modal('show');
 
 });
@@ -390,5 +407,47 @@ function closeModal() {
 }
 
 
+//this adds the select menu to choose player skill
+
+function addSkill() {
+    $("#player" + p).append("<select class='col-sm-1 col-md-1 col-lg-1 col-xs-1 selectSkill" + p + "'></select>");
+
+}
+
+//selection choices for skill level and player icon
+
+function playerSelect(userInput) {
+    $(this).on('input', function () {
+        switch (userInput) {
+            case "Mario":
+                $('#player1').prepend("<div > <img class='icon' src='../images/players/Mario.png' /></div>");
+                $(this).remove();
+                break;
+            case 'Luigi':
+                $(this).remove();
+                $(this).parent().prepend("<div class='icon'> <img src='../images/players/Mario.png' /></div>");
+                break;
+            case 'Toad':
+                $(this).remove();
+                $(this).parent().prepend("<div class='icon'> <img src='../images/players/Mario.png' /></div>");
+                break;
+            case 'Peach':
+                $(this).remove();
+                $(this).parent().prepend("<div class='icon'> <img src='../images/players/Mario.png' /></div>");
+                break;
+        }
+    })
+
+}
 
 //https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation use this for building geolocation
+
+/*  Still needed 
+ * create a modal that shows the total amounts for par, and yardage
+ * create a validaiton that compares the names of the players so that they aren't the same
+ * finish the select skill functionality, and update the yardage for the holes to reflect the chosen skill level
+ * create a message to comment on the inidividual's score when they enter their last amount
+ * finish the google map with the pins, and update it to be set up for each hole
+ *
+
+ * */

@@ -34,11 +34,24 @@
             <div class="row">
             <input id="zip" type="text" minlength="1" style="text-align: center">
                 </div>
-            <div id = "courseSelect" class="row">
-                <p>Course Selection Menu</p>
+            <div class="row">
+                <button onclick="getGolfCity(document.getElementById('zip').value)">Get Available Courses</button>
+            </div>
+            <div class="row">
+                <select id="courseSelectionMenu"></select>
+            </div>
+
+            <div class="row">
+                <button onclick="getMyInfo(document.getElementById('zip').value); getCourseInfo(document.getElementById('courseSelectionMenu').value)">Get the Course Info</button>
             </div>
 
             <div class="row spaced">
+                <div id="weather" class="col-sm-12 col-md-12 col-lg-12 col-xs-12 row">
+                    <div id="courseName" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"></div>
+                    <div id="cityName" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"></div>
+                    <div id="ImgDiv" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"><img id="weatherImage"/></div>
+                    <div id="weatherStatus" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"></div>
+                </div>
                 <div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-offset-2 col-sm-2 col-md-2 col-lg-2 col-xs-2">
                     <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
                         <label for="numPlayers">Number of Players</label>
@@ -53,16 +66,12 @@
                     </div>
                     <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
                         <select oninput="addPlayers()" title="Number of Holes" id="numHoles">
-                            <option value="...">...</option>
-                            <option value="9">Front Nine</option>
-                            <option value="9">Back Nine</option>
-                            <option value="18">Full Course</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="row doubleSpaced">
-                <button onclick="closeModal(); getMyInfo(document.getElementById('zip').value);">Start Game
+                <button onclick="closeModal();  getGolfInfo(document.getElementById('courseSelectionMenu').value); initMap();">Start Game
                 </button>
             </div>
 
@@ -72,11 +81,6 @@
 <div id="selectionMenu"
      class="container jumbotron col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
     <div id="topMenu">
-        <div id="weather" class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
-            <div id="cityName" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"></div>
-            <div id="ImgDiv" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"><img id="weatherImage"/></div>
-            <div id="weatherStatus" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"></div>
-        </div>
         <div id="teeTimer"
              class="container col-sm-offset-6 col-md-offset-6 col-lg-offset-6 col-xs-offset-6 col-sm-3 col-md-3 col-lg-3 col-xs-3">
             <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
