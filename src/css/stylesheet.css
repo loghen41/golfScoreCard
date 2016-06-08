@@ -2,9 +2,22 @@
     text-align: center;
 }
 
+.champion {
+    background-color: rgba(0, 0, 128, .9);
+}
+
 .doubleSpaced {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.defaultColor{
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.extraPlayer{
+    background-color: rgba(237, 237, 0, .4);
+    padding: 5px 5px 5px 5px;
 }
 
 .finalScore {
@@ -23,6 +36,12 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .icon {
@@ -47,6 +66,10 @@ html {
 
 }
 
+.men {
+    background-color: rgba(255, 255, 255, .9);
+}
+
 .menu {
     padding: 5px 5px 5px 5px;
 }
@@ -59,35 +82,30 @@ html {
 
 
 #player1{
-    background-color: rgba(0, 123, 123, .4);
     margin: 5px 0 0 0;
     padding: 5px 5px 5px 5px;
 }
 
 #player2{
-    background-color: rgba(123, 0, 123, .4);
     padding: 5px 5px 5px 5px;
 }
 
 #player3{
-    background-color: rgba(123, 123, 0, .4);
     padding: 5px 5px 5px 5px;
 }
 
 #player4{
-    background-color: rgba(0, 237, 237, .4);
     padding: 5px 5px 5px 5px;
 }
 
 #player5{
-    background-color: rgba(237, 0, 237, .4);
     padding: 5px 5px 5px 5px;
 }
 
-.extraPlayer{
-    background-color: rgba(237, 237, 0, .4);
-    padding: 5px 5px 5px 5px;
+.pro {
+    background-color: rgba(0, 0, 0, .9);
 }
+
 
 #scoreCard {
     background-color: #999;
@@ -110,6 +128,11 @@ html {
 
 #title {
     clear: both;
+}
+
+.women {
+    background-color: rgba(255, 0, 0, .9);
+
 }
 
 

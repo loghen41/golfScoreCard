@@ -21,7 +21,7 @@ function addPlayers() {
     $(scoreCard).empty();
     addMenu();
     for (p = 1; p <= playersValue; p++) {
-        $(scoreCard).append("<form id = 'player" + p + "' class = 'col-sm-12 col-md-12 col-lg-12 col-xs-12 player" + p + "'></form>");
+        $(scoreCard).append("<form id = 'player" + p + "' class = 'col-sm-12 col-md-12 col-lg-12 col-xs-12 player defaultColor" + p + "'></form>");
     }
     addTrays();
 
@@ -73,15 +73,15 @@ function addHoles() {
     $(trayNum).empty();
     if (holesValue === "9") {
         for (h = 1; h <= holesValue; h++) {
-            $(trayNum).append("<input type='number' oninput='finalScores()' style='text-align: center;'  min = '1' placeholder='" + h + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + h + "'> </input>");
+            $(trayNum).append("<input type='number' oninput='finalScores()' style='text-align: center;'  min = '1' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + h + "'> </input>");
         }
     }
     else if (holesValue === "18") {
         for (h = 1; h <= holesValue / 2; h++) {
             if (trayNum === ".tray2") {
-                $(trayNum).append("<input  type='number' oninput='finalScores()' style='text-align: center;' min = '1'  placeholder='" + (h + 9) + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + (h + 9) + "' > </input>");
+                $(trayNum).append("<input  type='number' oninput='finalScores()' style='text-align: center;' min = '1'  class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + (h + 9) + "' > </input>");
             } else {
-                $(trayNum).append("<input  type='number' oninput='finalScores()' text-align: center;' min = '1'  placeholder='" + h + "' class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + h + "' > </input>");
+                $(trayNum).append("<input  type='number' oninput='finalScores()' style='text-align: center;' min = '1'  class = 'col-sm-1 col-md-1 col-lg-1 col-xs-1 hole" + h + "' > </input>");
             }
         }
         $(trayNum).append("<div class='col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-2 col-md-2 col-lg-2 col-xs-2 score" + i + "'>Score</div>");
@@ -116,8 +116,6 @@ function addHoles() {
 
  */
 //this totals up the final scores for the individual players
-
-//this is completely unfinished
 
 function finalScores() {
     var playersValue = document.getElementById('numPlayers').value;
@@ -253,9 +251,9 @@ function addMenuHoles() {
 
 }
 
-// add the handicap area
+// add the Player Selection area
 function selectPlayer() {
-    $("#player" + p).append("<select  class='col-sm-1 col-md-1 col-lg-1 col-xs-1' id= 'selectPlayer" + p + "' oninput='playerSelect(this.value)'><option value='...'> Select Your Player </option> <option value='Mario'> Mario </option> <option value='Luigi'> Luigi </option><option value='Toad'> Toad </option><option value='Peach'> Peach</option></select>");
+    $("#player" + p).append("<div class='col-sm-1 col-md-1 col-lg-1 col-xs-1'><select class='selectPlayer' id= 'selectPlayer" + p + "' ><option value='...'> Select Your Player </option> <option value='Mario'> Mario </option> <option value='Luigi'> Luigi </option><option value='Toad'> Toad </option><option value='Peach'> Peach</option></select></div>");
 }
 
 
@@ -310,13 +308,13 @@ function getCourseInfo(theId) {
     courseInfoXhttp.onreadystatechange = function () {
         if (courseInfoXhttp.readyState == 4 && courseInfoXhttp.status == 200) {
             courseInfo = JSON.parse(courseInfoXhttp.responseText);
-            $('#courseName').append("<p>" + courseInfo.course.name +"</p>")
+            $('#courseName').append("<p>" + courseInfo.course.name + "</p>");
             if (courseInfo.course.hole_count === 18) {
                 $("#numHoles").append("  <option value='...'>...</option>" + "<option value='9'>Front Nine</option>" + "<option value='9'>Back Nine</option>" + "<option value='18'>Full Course</option>")
             }
 
             else if (courseInfo.course.hole_count === 9) {
-                $("#numHoles").append("  <option value='...'>...</option>" + "<option value='9'>Front Nine</option>" )
+                $("#numHoles").append("  <option value='...'>...</option>" + "<option value='9'>Front Nine</option>")
             }
         }
     };
@@ -324,7 +322,7 @@ function getCourseInfo(theId) {
     courseInfoXhttp.send();
 }
 
-//specific golf score call
+//Golf Course Request
 
 var golfInfo = {};
 var golfxhttp;
@@ -340,8 +338,8 @@ function getGolfInfo(id) {
                 document.getElementsByClassName("modal" + holeNum)[0].innerHTML = "<p>Yards: " + golfInfo.course.holes[holeNum - 1].tee_boxes[0].yards + "</p> <p>Par: " + golfInfo.course.holes[holeNum - 1].tee_boxes[0].par + "</p>" + "<p>Handicap: " + golfInfo.course.holes[holeNum - 1].tee_boxes[0].hcp + "</p>"
             }
             for (playerNumber = 1; playerNumber <= playersValue; playerNumber++) {
-                for(skill = 0; skill < golfInfo.course.holes[0].tee_boxes.length; skill++ ) {
-                    $(".selectSkill" + playerNumber).append("<option value=' " + golfInfo.course.holes[0].tee_boxes[skill].tee_type + "'> " + golfInfo.course.holes[0].tee_boxes[skill].tee_type + "</option>");
+                for (skill = 0; skill < golfInfo.course.holes[0].tee_boxes.length; skill++) {
+                    $("#selectSkill" + playerNumber).append("<option value='" + golfInfo.course.holes[0].tee_boxes[skill].tee_type + "'> " + golfInfo.course.holes[0].tee_boxes[skill].tee_type + "</option>");
                 }
 
             }
@@ -410,42 +408,63 @@ function closeModal() {
 //this adds the select menu to choose player skill
 
 function addSkill() {
-    $("#player" + p).append("<select class='col-sm-1 col-md-1 col-lg-1 col-xs-1 selectSkill" + p + "'></select>");
+    $("#player" + p).append("<select id='selectSkill" + p + "' class='col-sm-1 col-md-1 col-lg-1 col-xs-1 selectSkill'></select>");
 
 }
 
 //selection choices for skill level and player icon
 
-function playerSelect(userInput) {
-    $(this).on('input', function () {
-        switch (userInput) {
+$(document).ready(function () {
+    $("#scoreCard").on('change', '.selectPlayer', function () {
+        switch ($(this).val()) {
             case "Mario":
-                $('#player1').prepend("<div > <img class='icon' src='../images/players/Mario.png' /></div>");
+                $(this).parent().prepend("<div> <img class='icon' src='../images/players/Mario.png' /></div>");
                 $(this).remove();
                 break;
-            case 'Luigi':
+            case "Luigi":
+                $(this).parent().prepend("<div> <img class='icon' src='../images/players/Luigi.png' /></div>");
                 $(this).remove();
-                $(this).parent().prepend("<div class='icon'> <img src='../images/players/Mario.png' /></div>");
                 break;
-            case 'Toad':
+            case "Toad":
+                $(this).parent().prepend("<div> <img class='icon' src='../images/players/Toad.png' /></div>");
                 $(this).remove();
-                $(this).parent().prepend("<div class='icon'> <img src='../images/players/Mario.png' /></div>");
                 break;
-            case 'Peach':
+            case "Peach":
+                $(this).parent().prepend("<div> <img class='icon' src='../images/players/Peach.png' /></div>");
                 $(this).remove();
-                $(this).parent().prepend("<div class='icon'> <img src='../images/players/Mario.png' /></div>");
                 break;
         }
-    })
+    });
 
-}
+    $('#scoreCard').on('change', '.selectSkill', function () {
+        switch ($(this).val()) {
+            case "pro":
+                $(this).parent().removeClass('defaultColor');
+                $(this).parent().addClass('pro');
+                break;
+            case "men":
+                $(this).parent().removeClass('defaultColor');
+                $(this).parent().addClass('men');
+                break;
+            case "champion":
+                $(this).parent().removeClass('defaultColor');
+                $(this).parent().addClass('champion');
+                break;
+            case "women":
+                $(this).parent().removeClass('defaultColor');
+                $(this).parent().addClass('women');
+                break;
+
+        }
+    })
+});
+
 
 //https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation use this for building geolocation
 
 /*  Still needed 
  * create a modal that shows the total amounts for par, and yardage
  * create a validaiton that compares the names of the players so that they aren't the same
- * finish the select skill functionality, and update the yardage for the holes to reflect the chosen skill level
  * create a message to comment on the inidividual's score when they enter their last amount
  * finish the google map with the pins, and update it to be set up for each hole
  *
