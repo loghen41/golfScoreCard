@@ -21,8 +21,7 @@
 }
 
 .finalScore {
-    border: solid #000000 2px;
-    background-color: #999;
+    color: white;
 }
 
 .hole {
@@ -60,7 +59,9 @@ input[type=number]::-webkit-outer-spin-button {
     background-size: cover;
 }
 
-
+.modal-content {
+    background-color: rgba(240, 240, 240, .94) !important;
+}
 .map {
     height: 450px;
 
@@ -74,41 +75,41 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 5px 5px 5px 5px;
 }
 .menuObject {
-    background-color: red;
-    height: 20px;
-    border: black 2px solid;
+    background-color: transparent;
+
 }
+.player {
+    padding: 30px 5px 30px 5px;
+    vertical-align: middle;
 
-
+}
 
 #player1{
     margin: 5px 0 0 0;
-    padding: 5px 5px 5px 5px;
+
 }
 
-#player2{
-    padding: 5px 5px 5px 5px;
-}
-
-#player3{
-    padding: 5px 5px 5px 5px;
-}
-
-#player4{
-    padding: 5px 5px 5px 5px;
-}
-
-#player5{
-    padding: 5px 5px 5px 5px;
-}
 
 .pro {
     background-color: rgba(0, 0, 0, .9);
 }
 
-
+.row {
+    margin: 10px 0 10px 0;
+}
 #scoreCard {
-    background-color: #999;
+    background-color: rgba(200, 200, 200, .8);
+}
+#selectionMenu {
+    background-color: transparent;
+}
+
+.selectSkill {
+    margin-top: 5px;
+}
+
+.selectPlayer {
+    margin-top: 5px;
 }
 
 .score1 {
