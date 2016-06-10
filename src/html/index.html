@@ -19,14 +19,33 @@
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
             crossorigin="anonymous"></script>
 </head>
-<body onload="addMenu()">
+<body onload="addMenu(); greetPlayer();">
 
-<div id="modalMenu"  class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+<div id="modalMenu" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
      aria-labelledby="myLargeModalLabel">
-    <div  class="modal-dialog modal-lg">
-        <div  class="modal-content">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
             <div class="spaced row col-lg-offset-1 col-xs-offset-1 col-md-offset-1 col-sm-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
-                <h1>Welcome to Mario Golf</h1>
+                <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                    <h1>Welcome to Mario Golf</h1>
+                </div>
+                <div id="teeTimer"
+                     class="container off-color col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-offset-2 col-sm-8 col-md-8 col-lg-8 col-xs-8">
+                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                        <h4>Countdown to Tee-Time</h4>
+                    </div>
+                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                        <input id="countdownSelect" type="number" min="1" style="text-align: center;"
+                               placeholder="Minutes to Tee-Time?" class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
+                        <button onclick="countdownTimer(); getTeeTime()" class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
+                            Start Timer
+                        </button>
+                    </div>
+                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                        <p id="countdownDisplay" class="col-sm-12 col-md-12 col-lg-12 col-xs-12"></p>
+                    </div>
+                </div>
+
             </div>
             <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
                 <label for="zip">What City are you Playing in?</label>
@@ -48,25 +67,11 @@
             </div>
 
             <div class="row spaced">
-                <div id="teeTimer"
-                     class="container col-sm-offset-6 col-md-offset-6 col-lg-offset-6 col-xs-offset-6 col-sm-3 col-md-3 col-lg-3 col-xs-3">
-                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                        <h4>Countdown to Tee-Time</h4>
-                    </div>
-                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                        <input id="countdownSelect" type="number" min="1" style="text-align: center;"
-                               placeholder="Minutes to Tee-Time?" class="col-sm-7 col-md-7 col-lg-7 col-xs-7">
-                        <button onclick="countdownTimer(); getTeeTime()" class="col-sm-5 col-md-5 col-lg-5 col-xs-5">Start Timer
-                        </button>
-                    </div>
-                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                        <p id="countdownDisplay" class="col-sm-12 col-md-12 col-lg-12 col-xs-12"></p>
-                    </div>
-                </div>
-                <div id="weather" class="col-sm-12 col-md-12 col-lg-12 col-xs-12 row">
+                <div id="weather" class="off-color col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-offset-2 col-sm-8 col-md-8 col-lg-8 col-xs-8 row">
                     <div id="courseName" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"></div>
                     <div id="cityName" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"></div>
-                    <div id="ImgDiv" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"><img id="weatherImage"/></div>
+                    <div id="ImgDiv" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"><img id="weatherImage"/>
+                    </div>
                     <div id="weatherStatus" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12"></div>
                 </div>
                 <div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-offset-2 col-sm-2 col-md-2 col-lg-2 col-xs-2">
@@ -74,7 +79,8 @@
                         <label for="numPlayers">Number of Players</label>
                     </div>
                     <div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                        <input oninput="addPlayers()" id="numPlayers" type="number" min="0" style="text-align: center">
+                        <input oninput="addPlayers()" id="numPlayers" type="number" min="0"
+                               style="text-align: center">
                     </div>
                 </div>
                 <div class="col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-xs-offset-4 col-sm-2 col-md-2 col-lg-2 col-xs-2">
@@ -97,20 +103,35 @@
     </div>
 </div>
 <div id="selectionMenu"
-     class="container jumbotron col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
-    <div id="title" class="row  col-sm-12 col-md-12 col-lg-12 col-xs-12" style="text-align: center">
+     class="container  jumbotron col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
+    <div id="title" class="row col-sm-12 col-md-12 col-lg-12 col-xs-12" style="text-align: center">
     </div>
 </div>
 <form id="scoreCard"
       class="jumbotron container col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
 </form>
 <div id="modalArea"></div>
-<!-- <div class="jumbotron  footer container col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10">
-    <button onclick="addPlayer()">Add Extra Player Mid Game</button>
-</div> -->
-
+<div id="messageArea"
+     class="container jumbotron col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-sm-10 col-md-10 col-lg-10 col-xs-10"></div>
+<div id="soundArea">
+    <audio id="MarioWonderful" class='soundPlayer'
+           src="http://themushroomkingdom.net/sounds/wav/mg-n64_mario_6.wav"></audio>
+    <audio id="LuigiWonderful" class='soundPlayer'
+           src="http://themushroomkingdom.net/sounds/wav/mg-n64_luigi_2.wav"></audio>
+    <audio id="PeachExcellent" class='soundPlayer'
+           src="http://themushroomkingdom.net/sounds/wav/mg-n64_peach_4.wav"></audio>
+    <audio id="WarioWonderful" class='soundPlayer'
+           src="http://themushroomkingdom.net/sounds/wav/mg-n64_wario_2.wav"></audio>
+    <audio id="WarioImpatient" class='soundPlayer'
+           src="http://themushroomkingdom.net/sounds/wav/mg-n64_wario_5.wav"></audio>
+    <audio id="YoshiWonderful" class='soundPlayer'
+           src="http://themushroomkingdom.net/sounds/wav/mg-n64_yoshi_1.wav"></audio>
+    <audio id="LuigiFore" class='soundPlayer'
+           src="http://themushroomkingdom.net/sounds/wav/mg-n64_luigi_8.wav"></audio>
+</div>
 <script src="../js/script.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlwNMAKaa_QltdV7oHvfzo9oWWdnF9Ckk&callback=initMap" async
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlwNMAKaa_QltdV7oHvfzo9oWWdnF9Ckk&callback=initMap"
+        async
         defer></script>
 </body>
 </html>

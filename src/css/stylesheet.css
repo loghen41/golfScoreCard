@@ -12,13 +12,9 @@
 }
 
 .defaultColor{
-    background-color: rgba(255, 255, 255, .4);
+    background-color: rgba(200, 200, 200, .94);
 }
 
-.extraPlayer{
-    background-color: rgba(237, 237, 0, .4);
-    padding: 5px 5px 5px 5px;
-}
 
 .finalScore {
     color: white;
@@ -58,6 +54,10 @@ input[type=number]::-webkit-outer-spin-button {
     -o-background-size: cover;
     background-size: cover;
 }
+.MarioHole {
+    background-color: white;
+    border: black 1px solid;
+}
 
 .modal-content {
     background-color: rgba(240, 240, 240, .94) !important;
@@ -71,12 +71,24 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: rgba(255, 255, 255, .9);
 }
 
+.men div {
+    color: black;
+}
+
 .menu {
     padding: 5px 5px 5px 5px;
 }
 .menuObject {
     background-color: transparent;
 
+}
+
+#messageArea {
+    background-color: rgba(200, 200, 200, .9);
+}
+
+.off-color {
+    background-color: rgba(200, 200, 200, .94);
 }
 .player {
     padding: 30px 5px 30px 5px;
@@ -97,6 +109,10 @@ input[type=number]::-webkit-outer-spin-button {
 .row {
     margin: 10px 0 10px 0;
 }
+#title {
+    background-color: rgba(200, 200, 200, .9);
+}
+
 #scoreCard {
     background-color: rgba(200, 200, 200, .8);
 }
@@ -122,6 +138,9 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #999;
 }
 
+#soundArea {
+    display: none;
+}
 .spaced {
     margin-top: 10px;
     margin-bottom: 10px;
