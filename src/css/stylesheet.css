@@ -6,13 +6,12 @@
     background-color: rgba(0, 0, 128, .9);
 }
 
+.champion p {
+    color: white;
+}
 .doubleSpaced {
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.defaultColor{
-    background-color: rgba(200, 200, 200, .94);
 }
 
 
@@ -83,12 +82,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-#messageArea {
-    background-color: rgba(200, 200, 200, .9);
+#messagesToPlayer {
+    background-color: rgba(200, 200, 200, .8);
 }
 
 .off-color {
-    background-color: rgba(200, 200, 200, .94);
+    background-color: rgba(200, 200, 200, .8);
+    border-radius: 5px;
 }
 .player {
     padding: 30px 5px 30px 5px;
@@ -106,18 +106,22 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: rgba(0, 0, 0, .9);
 }
 
+.pro p {
+    color: white;
+}
+
 .row {
     margin: 10px 0 10px 0;
 }
 #title {
-    background-color: rgba(200, 200, 200, .9);
+
 }
 
 #scoreCard {
     background-color: rgba(200, 200, 200, .8);
 }
 #selectionMenu {
-    background-color: transparent;
+    background-color: rgba(200, 200, 200, .8);
 }
 
 .selectSkill {
@@ -155,6 +159,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+.women p{
+   color: white;
+
+}
 
 
 

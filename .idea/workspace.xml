@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efdfc7dd-d07e-46ec-9615-6b436727161b" name="Default" comment="">
+    <list default="true" id="efdfc7dd-d07e-46ec-9615-6b436727161b" name="Default" comment="commit 6/11, final push">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/stylesheet.css" afterPath="$PROJECT_DIR$/src/css/stylesheet.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/html/index.html" afterPath="$PROJECT_DIR$/src/html/index.html" />
@@ -29,8 +29,8 @@
       <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/css/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+            <state relative-caret-position="135">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -39,13 +39,15 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+            <state relative-caret-position="180">
+              <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -56,16 +58,19 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="113" column="105" selection-start-line="113" selection-start-column="105" selection-end-line="113" selection-end-column="105" />
+            <state relative-caret-position="534">
+              <caret line="632" column="0" selection-start-line="632" selection-start-column="0" selection-end-line="632" selection-end-column="0" />
               <folding>
                 <element signature="e#0#48#0" expanded="false" />
+                <element signature="n#!!block;n#addPlayers#0" expanded="false" />
                 <element signature="n#!!block;n#addTrays#0" expanded="false" />
                 <element signature="n#!!block;n#addHoles#0" expanded="false" />
+                <element signature="n#!!block;n#finalScores#0" expanded="false" />
                 <element signature="n#!!block;n#scoreMessage#0" expanded="false" />
                 <element signature="n#!!block;n#getTeeTime#0" expanded="false" />
                 <element signature="n#!!block;n#countdownTimer#0" expanded="false" />
                 <element signature="n#!!block;n#clocktick#0" expanded="false" />
+                <element signature="n#!!block;n#addComputer#0" expanded="false" />
                 <element signature="n#!!block;n#addComputerTrays#0" expanded="false" />
                 <element signature="n#!!block;n#addComputerHoles#0" expanded="false" />
                 <element signature="n#!!block;n#addMenu#0" expanded="false" />
@@ -77,23 +82,22 @@
                 <element signature="n#!!block;n#getCourseInfo#0" expanded="false" />
                 <element signature="n#!!block;n#getGolfInfo#0" expanded="false" />
                 <element signature="n#!!block;n#initMap#0" expanded="false" />
-                <element signature="e#30332#30368#0" expanded="false" />
+                <element signature="e#33620#33656#0" expanded="false" />
                 <element signature="n#!!block;n#closeModal#0" expanded="false" />
                 <element signature="n#!!block;n#addSkill#0" expanded="false" />
-                <element signature="e#30822#32483#0" expanded="false" />
-                <element signature="e#31779#32480#0" expanded="false" />
+                <element signature="e#34110#35771#0" expanded="false" />
+                <element signature="e#35067#35768#0" expanded="false" />
                 <element signature="n#!!block;n#validateForm#0" expanded="false" />
                 <element signature="n#!!block;n#greetPlayer#0" expanded="false" />
-                <element signature="n#!!block;n#mockPlayer#0" expanded="false" />
-                <marker date="1465543291000" expanded="true" signature="2971:2990" placeholder="..." />
-                <marker date="1465543291000" expanded="true" signature="3340:3359" placeholder="..." />
-                <marker date="1465543291000" expanded="true" signature="3597:3616" placeholder="..." />
-                <marker date="1465543291000" expanded="true" signature="14023:14041" placeholder="..." />
-                <marker date="1465543291000" expanded="true" signature="14426:14444" placeholder="..." />
-                <marker date="1465543291000" expanded="true" signature="14639:14657" placeholder="..." />
-                <marker date="1465543291000" expanded="true" signature="16739:16757" placeholder="..." />
-                <marker date="1465543291000" expanded="true" signature="18232:18250" placeholder="..." />
-                <marker date="1465543291000" expanded="true" signature="19559:19577" placeholder="..." />
+                <marker date="1465714692000" expanded="true" signature="2971:2990" placeholder="..." />
+                <marker date="1465714692000" expanded="true" signature="3340:3359" placeholder="..." />
+                <marker date="1465714692000" expanded="true" signature="3597:3616" placeholder="..." />
+                <marker date="1465714692000" expanded="true" signature="15341:15359" placeholder="..." />
+                <marker date="1465714692000" expanded="true" signature="15744:15762" placeholder="..." />
+                <marker date="1465714692000" expanded="true" signature="15957:15975" placeholder="..." />
+                <marker date="1465714692000" expanded="true" signature="18258:18276" placeholder="..." />
+                <marker date="1465714692000" expanded="true" signature="19752:19770" placeholder="..." />
+                <marker date="1465714692000" expanded="true" signature="21173:21191" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -279,7 +283,8 @@
       <workItem from="1465307420862" duration="7737000" />
       <workItem from="1465396047063" duration="8589000" />
       <workItem from="1465480240638" duration="12855000" />
-      <workItem from="1465529326428" duration="12286000" />
+      <workItem from="1465529326428" duration="12309000" />
+      <workItem from="1465604789553" duration="8686000" />
     </task>
     <task id="LOCAL-00001" summary="updated 5/19&#10;">
       <created>1463677741754</created>
@@ -365,11 +370,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465497117894</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="commit 6/9, probably final push">
+      <created>1465543449328</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1465543449328</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130305000" />
+    <option name="totallyTimeSpent" value="139014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="720" extended-state="0" />
@@ -435,15 +447,87 @@
     <MESSAGE value="commit 6/7" />
     <MESSAGE value="commit 6/8" />
     <MESSAGE value="commit 6/9" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 6/9" />
+    <MESSAGE value="commit 6/9, probably final push" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 6/9, probably final push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/css/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+            <element signature="n#!!block;n#addPlayers#0" expanded="false" />
+            <element signature="n#!!block;n#addTrays#0" expanded="false" />
+            <element signature="n#!!block;n#addHoles#0" expanded="false" />
+            <element signature="n#!!block;n#finalScores#0" expanded="false" />
+            <element signature="n#!!block;n#scoreMessage#0" expanded="false" />
+            <element signature="n#!!block;n#getTeeTime#0" expanded="false" />
+            <element signature="n#!!block;n#countdownTimer#0" expanded="false" />
+            <element signature="n#!!block;n#clocktick#0" expanded="false" />
+            <element signature="n#!!block;n#addComputer#0" expanded="false" />
+            <element signature="n#!!block;n#addComputerTrays#0" expanded="false" />
+            <element signature="n#!!block;n#addComputerHoles#0" expanded="false" />
+            <element signature="n#!!block;n#addMenu#0" expanded="false" />
+            <element signature="n#!!block;n#addMenuTrays#0" expanded="false" />
+            <element signature="n#!!block;n#addMenuHoles#0" expanded="false" />
+            <element signature="n#!!block;n#selectPlayer#0" expanded="false" />
+            <element signature="n#!!block;n#getMyInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getGolfCity#0" expanded="false" />
+            <element signature="n#!!block;n#getCourseInfo#0" expanded="false" />
+            <element signature="n#!!block;n#getGolfInfo#0" expanded="false" />
+            <element signature="n#!!block;n#initMap#0" expanded="false" />
+            <element signature="e#33620#33656#0" expanded="false" />
+            <element signature="n#!!block;n#closeModal#0" expanded="false" />
+            <element signature="n#!!block;n#addSkill#0" expanded="false" />
+            <element signature="e#34110#35771#0" expanded="false" />
+            <element signature="e#35067#35768#0" expanded="false" />
+            <element signature="n#!!block;n#validateForm#0" expanded="false" />
+            <element signature="n#!!block;n#greetPlayer#0" expanded="false" />
+            <marker date="1465714692000" expanded="true" signature="2971:2990" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3340:3359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3597:3616" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15341:15359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15744:15762" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15957:15975" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="18258:18276" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="19752:19770" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="21173:21191" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -458,9 +542,11 @@
           <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -473,12 +559,15 @@
           <caret line="285" column="248" selection-start-line="285" selection-start-column="248" selection-end-line="285" selection-end-column="248" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
+            <element signature="n#!!block;n#addPlayers#0" expanded="false" />
             <element signature="n#!!block;n#addTrays#0" expanded="false" />
             <element signature="n#!!block;n#addHoles#0" expanded="false" />
+            <element signature="n#!!block;n#finalScores#0" expanded="false" />
             <element signature="n#!!block;n#scoreMessage#0" expanded="false" />
             <element signature="n#!!block;n#getTeeTime#0" expanded="false" />
             <element signature="n#!!block;n#countdownTimer#0" expanded="false" />
             <element signature="n#!!block;n#clocktick#0" expanded="false" />
+            <element signature="n#!!block;n#addComputer#0" expanded="false" />
             <element signature="n#!!block;n#addComputerTrays#0" expanded="false" />
             <element signature="n#!!block;n#addComputerHoles#0" expanded="false" />
             <element signature="n#!!block;n#addMenu#0" expanded="false" />
@@ -490,23 +579,22 @@
             <element signature="n#!!block;n#getCourseInfo#0" expanded="false" />
             <element signature="n#!!block;n#getGolfInfo#0" expanded="false" />
             <element signature="n#!!block;n#initMap#0" expanded="false" />
-            <element signature="e#30332#30368#0" expanded="false" />
+            <element signature="e#33620#33656#0" expanded="false" />
             <element signature="n#!!block;n#closeModal#0" expanded="false" />
             <element signature="n#!!block;n#addSkill#0" expanded="false" />
-            <element signature="e#30822#32483#0" expanded="false" />
-            <element signature="e#31779#32480#0" expanded="false" />
+            <element signature="e#34110#35771#0" expanded="false" />
+            <element signature="e#35067#35768#0" expanded="false" />
             <element signature="n#!!block;n#validateForm#0" expanded="false" />
             <element signature="n#!!block;n#greetPlayer#0" expanded="false" />
-            <element signature="n#!!block;n#mockPlayer#0" expanded="false" />
-            <marker date="1465543291000" expanded="true" signature="2971:2990" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3340:3359" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3597:3616" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14023:14041" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14426:14444" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14639:14657" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="16739:16757" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="18232:18250" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="19559:19577" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="2971:2990" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3340:3359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3597:3616" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15341:15359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15744:15762" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15957:15975" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="18258:18276" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="19752:19770" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="21173:21191" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -525,9 +613,11 @@
           <caret line="67" column="70" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -540,12 +630,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
+            <element signature="n#!!block;n#addPlayers#0" expanded="false" />
             <element signature="n#!!block;n#addTrays#0" expanded="false" />
             <element signature="n#!!block;n#addHoles#0" expanded="false" />
+            <element signature="n#!!block;n#finalScores#0" expanded="false" />
             <element signature="n#!!block;n#scoreMessage#0" expanded="false" />
             <element signature="n#!!block;n#getTeeTime#0" expanded="false" />
             <element signature="n#!!block;n#countdownTimer#0" expanded="false" />
             <element signature="n#!!block;n#clocktick#0" expanded="false" />
+            <element signature="n#!!block;n#addComputer#0" expanded="false" />
             <element signature="n#!!block;n#addComputerTrays#0" expanded="false" />
             <element signature="n#!!block;n#addComputerHoles#0" expanded="false" />
             <element signature="n#!!block;n#addMenu#0" expanded="false" />
@@ -557,23 +650,22 @@
             <element signature="n#!!block;n#getCourseInfo#0" expanded="false" />
             <element signature="n#!!block;n#getGolfInfo#0" expanded="false" />
             <element signature="n#!!block;n#initMap#0" expanded="false" />
-            <element signature="e#30332#30368#0" expanded="false" />
+            <element signature="e#33620#33656#0" expanded="false" />
             <element signature="n#!!block;n#closeModal#0" expanded="false" />
             <element signature="n#!!block;n#addSkill#0" expanded="false" />
-            <element signature="e#30822#32483#0" expanded="false" />
-            <element signature="e#31779#32480#0" expanded="false" />
+            <element signature="e#34110#35771#0" expanded="false" />
+            <element signature="e#35067#35768#0" expanded="false" />
             <element signature="n#!!block;n#validateForm#0" expanded="false" />
             <element signature="n#!!block;n#greetPlayer#0" expanded="false" />
-            <element signature="n#!!block;n#mockPlayer#0" expanded="false" />
-            <marker date="1465543291000" expanded="true" signature="2971:2990" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3340:3359" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3597:3616" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14023:14041" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14426:14444" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14639:14657" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="16739:16757" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="18232:18250" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="19559:19577" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="2971:2990" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3340:3359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3597:3616" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15341:15359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15744:15762" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15957:15975" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="18258:18276" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="19752:19770" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="21173:21191" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -592,9 +684,11 @@
           <caret line="67" column="70" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -607,12 +701,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
+            <element signature="n#!!block;n#addPlayers#0" expanded="false" />
             <element signature="n#!!block;n#addTrays#0" expanded="false" />
             <element signature="n#!!block;n#addHoles#0" expanded="false" />
+            <element signature="n#!!block;n#finalScores#0" expanded="false" />
             <element signature="n#!!block;n#scoreMessage#0" expanded="false" />
             <element signature="n#!!block;n#getTeeTime#0" expanded="false" />
             <element signature="n#!!block;n#countdownTimer#0" expanded="false" />
             <element signature="n#!!block;n#clocktick#0" expanded="false" />
+            <element signature="n#!!block;n#addComputer#0" expanded="false" />
             <element signature="n#!!block;n#addComputerTrays#0" expanded="false" />
             <element signature="n#!!block;n#addComputerHoles#0" expanded="false" />
             <element signature="n#!!block;n#addMenu#0" expanded="false" />
@@ -624,23 +721,22 @@
             <element signature="n#!!block;n#getCourseInfo#0" expanded="false" />
             <element signature="n#!!block;n#getGolfInfo#0" expanded="false" />
             <element signature="n#!!block;n#initMap#0" expanded="false" />
-            <element signature="e#30332#30368#0" expanded="false" />
+            <element signature="e#33620#33656#0" expanded="false" />
             <element signature="n#!!block;n#closeModal#0" expanded="false" />
             <element signature="n#!!block;n#addSkill#0" expanded="false" />
-            <element signature="e#30822#32483#0" expanded="false" />
-            <element signature="e#31779#32480#0" expanded="false" />
+            <element signature="e#34110#35771#0" expanded="false" />
+            <element signature="e#35067#35768#0" expanded="false" />
             <element signature="n#!!block;n#validateForm#0" expanded="false" />
             <element signature="n#!!block;n#greetPlayer#0" expanded="false" />
-            <element signature="n#!!block;n#mockPlayer#0" expanded="false" />
-            <marker date="1465543291000" expanded="true" signature="2971:2990" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3340:3359" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3597:3616" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14023:14041" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14426:14444" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14639:14657" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="16739:16757" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="18232:18250" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="19559:19577" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="2971:2990" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3340:3359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3597:3616" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15341:15359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15744:15762" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15957:15975" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="18258:18276" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="19752:19770" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="21173:21191" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -659,9 +755,11 @@
           <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -674,12 +772,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
+            <element signature="n#!!block;n#addPlayers#0" expanded="false" />
             <element signature="n#!!block;n#addTrays#0" expanded="false" />
             <element signature="n#!!block;n#addHoles#0" expanded="false" />
+            <element signature="n#!!block;n#finalScores#0" expanded="false" />
             <element signature="n#!!block;n#scoreMessage#0" expanded="false" />
             <element signature="n#!!block;n#getTeeTime#0" expanded="false" />
             <element signature="n#!!block;n#countdownTimer#0" expanded="false" />
             <element signature="n#!!block;n#clocktick#0" expanded="false" />
+            <element signature="n#!!block;n#addComputer#0" expanded="false" />
             <element signature="n#!!block;n#addComputerTrays#0" expanded="false" />
             <element signature="n#!!block;n#addComputerHoles#0" expanded="false" />
             <element signature="n#!!block;n#addMenu#0" expanded="false" />
@@ -691,23 +792,22 @@
             <element signature="n#!!block;n#getCourseInfo#0" expanded="false" />
             <element signature="n#!!block;n#getGolfInfo#0" expanded="false" />
             <element signature="n#!!block;n#initMap#0" expanded="false" />
-            <element signature="e#30332#30368#0" expanded="false" />
+            <element signature="e#33620#33656#0" expanded="false" />
             <element signature="n#!!block;n#closeModal#0" expanded="false" />
             <element signature="n#!!block;n#addSkill#0" expanded="false" />
-            <element signature="e#30822#32483#0" expanded="false" />
-            <element signature="e#31779#32480#0" expanded="false" />
+            <element signature="e#34110#35771#0" expanded="false" />
+            <element signature="e#35067#35768#0" expanded="false" />
             <element signature="n#!!block;n#validateForm#0" expanded="false" />
             <element signature="n#!!block;n#greetPlayer#0" expanded="false" />
-            <element signature="n#!!block;n#mockPlayer#0" expanded="false" />
-            <marker date="1465543291000" expanded="true" signature="2971:2990" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3340:3359" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3597:3616" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14023:14041" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14426:14444" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14639:14657" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="16739:16757" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="18232:18250" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="19559:19577" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="2971:2990" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3340:3359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3597:3616" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15341:15359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15744:15762" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15957:15975" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="18258:18276" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="19752:19770" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="21173:21191" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -726,9 +826,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -741,12 +843,15 @@
           <caret line="355" column="20" selection-start-line="355" selection-start-column="20" selection-end-line="355" selection-end-column="20" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
+            <element signature="n#!!block;n#addPlayers#0" expanded="false" />
             <element signature="n#!!block;n#addTrays#0" expanded="false" />
             <element signature="n#!!block;n#addHoles#0" expanded="false" />
+            <element signature="n#!!block;n#finalScores#0" expanded="false" />
             <element signature="n#!!block;n#scoreMessage#0" expanded="false" />
             <element signature="n#!!block;n#getTeeTime#0" expanded="false" />
             <element signature="n#!!block;n#countdownTimer#0" expanded="false" />
             <element signature="n#!!block;n#clocktick#0" expanded="false" />
+            <element signature="n#!!block;n#addComputer#0" expanded="false" />
             <element signature="n#!!block;n#addComputerTrays#0" expanded="false" />
             <element signature="n#!!block;n#addComputerHoles#0" expanded="false" />
             <element signature="n#!!block;n#addMenu#0" expanded="false" />
@@ -758,62 +863,66 @@
             <element signature="n#!!block;n#getCourseInfo#0" expanded="false" />
             <element signature="n#!!block;n#getGolfInfo#0" expanded="false" />
             <element signature="n#!!block;n#initMap#0" expanded="false" />
-            <element signature="e#30332#30368#0" expanded="false" />
+            <element signature="e#33620#33656#0" expanded="false" />
             <element signature="n#!!block;n#closeModal#0" expanded="false" />
             <element signature="n#!!block;n#addSkill#0" expanded="false" />
-            <element signature="e#30822#32483#0" expanded="false" />
-            <element signature="e#31779#32480#0" expanded="false" />
+            <element signature="e#34110#35771#0" expanded="false" />
+            <element signature="e#35067#35768#0" expanded="false" />
             <element signature="n#!!block;n#validateForm#0" expanded="false" />
             <element signature="n#!!block;n#greetPlayer#0" expanded="false" />
-            <element signature="n#!!block;n#mockPlayer#0" expanded="false" />
-            <marker date="1465543291000" expanded="true" signature="2971:2990" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3340:3359" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3597:3616" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14023:14041" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14426:14444" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14639:14657" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="16739:16757" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="18232:18250" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="19559:19577" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="2971:2990" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3340:3359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3597:3616" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15341:15359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15744:15762" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15957:15975" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="18258:18276" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="19752:19770" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="21173:21191" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        <state relative-caret-position="180">
+          <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="113" column="105" selection-start-line="113" selection-start-column="105" selection-end-line="113" selection-end-column="105" />
+        <state relative-caret-position="534">
+          <caret line="632" column="0" selection-start-line="632" selection-start-column="0" selection-end-line="632" selection-end-column="0" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
+            <element signature="n#!!block;n#addPlayers#0" expanded="false" />
             <element signature="n#!!block;n#addTrays#0" expanded="false" />
             <element signature="n#!!block;n#addHoles#0" expanded="false" />
+            <element signature="n#!!block;n#finalScores#0" expanded="false" />
             <element signature="n#!!block;n#scoreMessage#0" expanded="false" />
             <element signature="n#!!block;n#getTeeTime#0" expanded="false" />
             <element signature="n#!!block;n#countdownTimer#0" expanded="false" />
             <element signature="n#!!block;n#clocktick#0" expanded="false" />
+            <element signature="n#!!block;n#addComputer#0" expanded="false" />
             <element signature="n#!!block;n#addComputerTrays#0" expanded="false" />
             <element signature="n#!!block;n#addComputerHoles#0" expanded="false" />
             <element signature="n#!!block;n#addMenu#0" expanded="false" />
@@ -825,23 +934,22 @@
             <element signature="n#!!block;n#getCourseInfo#0" expanded="false" />
             <element signature="n#!!block;n#getGolfInfo#0" expanded="false" />
             <element signature="n#!!block;n#initMap#0" expanded="false" />
-            <element signature="e#30332#30368#0" expanded="false" />
+            <element signature="e#33620#33656#0" expanded="false" />
             <element signature="n#!!block;n#closeModal#0" expanded="false" />
             <element signature="n#!!block;n#addSkill#0" expanded="false" />
-            <element signature="e#30822#32483#0" expanded="false" />
-            <element signature="e#31779#32480#0" expanded="false" />
+            <element signature="e#34110#35771#0" expanded="false" />
+            <element signature="e#35067#35768#0" expanded="false" />
             <element signature="n#!!block;n#validateForm#0" expanded="false" />
             <element signature="n#!!block;n#greetPlayer#0" expanded="false" />
-            <element signature="n#!!block;n#mockPlayer#0" expanded="false" />
-            <marker date="1465543291000" expanded="true" signature="2971:2990" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3340:3359" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="3597:3616" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14023:14041" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14426:14444" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="14639:14657" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="16739:16757" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="18232:18250" placeholder="..." />
-            <marker date="1465543291000" expanded="true" signature="19559:19577" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="2971:2990" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3340:3359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="3597:3616" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15341:15359" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15744:15762" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="15957:15975" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="18258:18276" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="19752:19770" placeholder="..." />
+            <marker date="1465714692000" expanded="true" signature="21173:21191" placeholder="..." />
           </folding>
         </state>
       </provider>
